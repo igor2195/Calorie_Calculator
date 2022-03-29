@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Calorie Calculator</title>
+  </head>
+  <body>
+    <div class="container">
+
+      <h1 class="container__title">
+        Счетчик колорий
+      </h1>
+
+      <div class="calculate">
+        <div class="gender">
+          <h1 class="gender__name"> 
+            Пол
+          </h1>
+
+          <div class="buttons">
+            <button class="button__selection button__selection_active" value="Мужчина">Мужчина</button>
+            <button class="button__selection" value="Женщина">Женщина</button>
+          </div>
+
+        </div>
+
+        <div class="params">
+          <div class="age">
+            <h2 class="age__text">Возраст</h2>
+            <input type="text" class="age__input" placeholder="0" title="Заполните это поле.">
+
+          </div>
+
+          <div class="height">
+            <h2 class="height__text">Рост</h2>
+            <input type="text" class="height__input" placeholder="0" title="Заполните это поле.">
+            
+          </div>
+
+          <div class="weight">
+            <h2 class="weight__text">Вес</h2>
+            <input type="text" class="weight__input" placeholder="0" title="Заполните это поле.">
+            
+          </div>
+
+        </div>
+
+        <div class="physical-activity">
+          <h2 class="physical-activity__text">Физическая активность</h2>
+
+          <div class="physical-activity__input">
+            <ul>
+              <li>
+                <input type="radio" name="activity" value="1.2" checked>
+                <div class="workload">
+                  <b>Минимальная</b>
+                  <p>Сидячая работа и нет физических нагрузок</p>
+                </div>
+              </li>
+
+              <li>
+                <input type="radio" name="activity" value="1.375">
+                <div class="workload">
+                  <b>Низкая</b>
+                  <p>Редкие, нерегулярные тренировки, активность в быту</p>
+                </div>
+              </li>
+
+              <li>
+                <input type="radio" name="activity" value="1.55">
+                <div class="workload">
+                  <b>Средняя</b>
+                  <p>Тренеровки 3-5 раза в неделю</p>
+                </div>
+              </li>
+
+              <li>
+                <input type="radio" name="activity" value="1.725">
+                <div class="workload">
+                  <b>Высокая</b>
+                  <p>Тренеровки 6-7 раза в неделю</p>
+                </div>
+              </li>
+
+              <li>
+                <input type="radio" name="activity" value="1.9">
+                <div class="workload">
+                  <b>Очень высокая</b>
+                  <p>Больше 6 тренеровок в неделю и физическая работа</p>
+                </div>
+              </li>
+            </ul>
+
+          </div>
+
+        </div>
+
+        <div class="calculate-button">
+          <button class="calculate-button__getResult" disabled="true">Раcсчитать</button>
+          <button class="calculate-button__reset" disabled="true">Очистить поля и расчет</button>
+        </div>
+
+      </div>
+
+      <div class="result visible">
+        <h2 class="result__title">Ваша норма калорий</h2>
+        <div class="calorie-results">
+          <div class="calorie-results__hold">
+            <p>холд</p>
+          </div>
+          <div class="calorie-results__drop">
+            <p>дроп</p>
+          </div>
+          <div class="calorie-results__boost">
+            <p>буст</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
