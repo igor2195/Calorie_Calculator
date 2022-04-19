@@ -51,8 +51,8 @@ reset.addEventListener('click', clearParams)
 
 //Расчет каллорий
 function calculateCalories (gender) {
-  if(gender === "Мужчина") return Math.ceil(((10 * weight.value) + (6.25 * height.value) - (5 * age.value) + 5) * coef);
-  else if(gender === "Женщина") return Math.ceil(((10 * weight.value) + (6.25 * height.value) - (5 * age.value) - 161) * coef);
+  if(gender === "Мужчина") return ((10 * weight.value) + (6.25 * height.value) - (5 * age.value) + 5) * coef;
+  else if(gender === "Женщина") return ((10 * weight.value) + (6.25 * height.value) - (5 * age.value) - 161) * coef;
 }
 
 //Активация кнопки рассчета
@@ -82,9 +82,9 @@ function clearParams () {
 }
 
 function CalculateResult () {
-  resultHold.innerHTML = `<b>${calculateCalories(gender)}</b><br> ккал поддержание веса`
-  resultDrop.innerHTML = `<b>${calculateCalories(gender) - (calculateCalories(gender) * 0.15)}</b><br> ккал снижение веса`
-  resultBoost.innerHTML = `<b>${calculateCalories(gender) + (calculateCalories(gender) * 0.15)}</b><br> ккал набор веса`
+  resultHold.innerHTML = `<b>${Math.ceil(calculateCalories(gender))} ккал</b><br> поддержание веса`
+  resultDrop.innerHTML = `<b>${Math.ceil(calculateCalories(gender) - (calculateCalories(gender) * 0.15))}  ккал</b><br>снижение веса`
+  resultBoost.innerHTML = `<b>${Math.ceil(calculateCalories(gender) + (calculateCalories(gender) * 0.15))} ккал</b><br> набор веса`
   resultBlock.classList.remove('visible')
 }
 
